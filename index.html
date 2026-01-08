@@ -2,130 +2,271 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Kaio Herculano | Backend Developer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Kaio Herculano, Desenvolvedor Python e Django.">
+    <meta name="author" content="Kaio Herculano">
+    <title>Kaio Herculano | Desenvolvedor Python</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="bg-dark text-white text-center py-5">
-    <div class="container">
-        <h1 class="fw-bold">Kaio Herculano</h1>
-        <p class="lead">Desenvolvedor Backend | Python • Django • DRF</p>
-        <div class="mt-3">
-            <a href="https://github.com/KaioHerculano" target="_blank" class="btn btn-outline-light btn-sm">GitHub</a>
-            <a href="https://www.linkedin.com/in/kaio-herculano-0063932ba" target="_blank" class="btn btn-outline-light btn-sm">LinkedIn</a>
-            <a href="mailto:kaioherculano12@gmail.com" class="btn btn-outline-light btn-sm">Contato</a>
+<nav class="navbar">
+    <div class="navbar__container">
+        <a href="#home" class="navbar__logo">KH</a>
+
+        <button class="navbar__hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <span class="navbar__hamburger-bar"></span>
+            <span class="navbar__hamburger-bar"></span>
+            <span class="navbar__hamburger-bar"></span>
+        </button>
+
+        <ul class="navbar__menu" id="nav-menu">
+            <li class="navbar__item"><a href="#home" class="navbar__link">Início</a></li>
+            <li class="navbar__item"><a href="#about" class="navbar__link">Sobre</a></li>
+            <li class="navbar__item"><a href="#journey" class="navbar__link">Jornada</a></li>
+            <li class="navbar__item"><a href="#projects" class="navbar__link">Projetos</a></li>
+            <li class="navbar__item"><a href="#contact" class="navbar__link">Contato</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+
+<header class="hero" id="home">
+    <div class="hero__container">
+        <div class="hero__image-wrapper">
+            <img src="images/profile.jpg" alt="Foto de perfil de Kaio Herculano" class="hero__image">
+        </div>
+        <div class="hero__text">
+            <h1 class="hero__title">
+                <span class="typewriter"></span><span class="cursor">&nbsp;</span>
+            </h1>
+            <p class="hero__subtitle">
+                Desenvolvedor de Jauru-MT para o mundo, focado em Python e Django,
+                apaixonado por transformar problemas em soluções web eficientes.
+            </p>
+            <a href="docs/curriculo.docx" class="button" target="_blank" rel="noopener noreferrer">Ver Currículo</a>
         </div>
     </div>
 </header>
 
-<!-- SOBRE -->
-<section class="container py-5">
-    <h2 class="section-title">Sobre mim</h2>
-    <p>
-        Desenvolvedor Backend Júnior com experiência em Python, Django e Django REST Framework.
-        Atuação no desenvolvimento de APIs RESTful, CI/CD, testes automatizados, Docker e sistemas
-        assíncronos com Celery e Redis. Experiência em arquitetura desacoplada e mentoria técnica.
-    </p>
-</section>
+<section class="about" id="about">
+    <div class="about__container reveal">
+        <h2 class="section-title">Minha História</h2>
+        <div class="about__content">
+            <p class="about__description">
+                Nascido em Jauru, uma pequena cidade do interior de Mato Grosso, minha paixão pela tecnologia
+                começou cedo. Em 2019 escrevi meu primeiro "Hello, World" em Python. Em 2024,
+                ingressei na faculdade e passei a focar totalmente em Django e desenvolvimento backend,
+                criando APIs, sistemas escaláveis e soluções reais em produção.
+            </p>
 
-<!-- HABILIDADES -->
-<section class="bg-light py-5">
-    <div class="container">
-        <h2 class="section-title">Habilidades Técnicas</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Backend</h5>
-                <ul>
+            <div class="about__skills">
+                <h3 class="about__skills-title">Principais Habilidades</h3>
+                <ul class="about__skills-list">
                     <li>Python</li>
                     <li>Django & DRF</li>
-                    <li>FastAPI / Flask</li>
+                    <li>APIs RESTful</li>
+                    <li>Docker</li>
                     <li>Celery & Redis</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h5>Banco de Dados</h5>
-                <ul>
                     <li>PostgreSQL</li>
-                    <li>MongoDB</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h5>DevOps & Outros</h5>
-                <ul>
-                    <li>Docker & Docker Compose</li>
-                    <li>Git & GitHub Actions</li>
-                    <li>CI/CD</li>
-                    <li>AWS & PythonAnywhere</li>
+                    <li>SQLAchemy</li>
+                    <li>Git & GitHub</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROJETOS -->
-<section class="container py-5">
-    <h2 class="section-title">Projetos</h2>
+<section class="journey" id="journey">
+    <div class="journey__container reveal">
+        <h2 class="section-title">Minha Jornada</h2>
 
-    <div class="project">
-        <h5>Live Sync (2025)</h5>
-        <p>Plataforma de sincronização em tempo real com arquitetura escalável e serviços desacoplados.</p>
-        <p><strong>Stack:</strong> Django, Docker, Celery, Redis</p>
-        <a href="https://livesyncapp.com/" target="_blank">Website</a>
-    </div>
+        <div class="timeline">
 
-    <div class="project">
-        <h5>Medical Appointment Scheduling API</h5>
-        <p>API RESTful com autenticação JWT, CI/CD e testes automatizados.</p>
-        <p><strong>Stack:</strong> Django, DRF, PostgreSQL, Docker</p>
-        <a href="https://github.com/KaioHerculano/Medical_Appointment_Scheduling_API" target="_blank">GitHub</a>
-    </div>
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    <h3 class="timeline__year">~2014</h3>
+                    <p class="timeline__description">
+                        Ganhei meu primeiro computador e iniciei minha jornada autodidata em tecnologia.
+                    </p>
+                </div>
+            </div>
 
-    <div class="project">
-        <h5>Sales Hub</h5>
-        <p>Sistema de gestão comercial com PDV, BI e relatórios.</p>
-        <p><strong>Stack:</strong> Django, DRF, Bootstrap, Chart.js</p>
-        <a href="https://github.com/KaioHerculano/Sales_Hub" target="_blank">GitHub</a>
-    </div>
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    <h3 class="timeline__year">2019</h3>
+                    <p class="timeline__description">
+                        Primeiro contato com programação através do Python.
+                    </p>
+                </div>
+            </div>
 
-    <div class="project">
-        <h5>Health in Focus</h5>
-        <p>Sistema de agendamento com foco em acessibilidade.</p>
-        <a href="https://github.com/KaioHerculano/health_in_focus" target="_blank">GitHub</a>
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    <h3 class="timeline__year">2024</h3>
+                    <p class="timeline__description">
+                        Início da faculdade e foco total em desenvolvimento backend com Django.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    <h3 class="timeline__year">2025</h3>
+                    <p class="timeline__description">
+                        <strong>Desenvolvedor Backend Júnior – Lacrei Saúde (Voluntário)</strong><br>
+                        Desenvolvimento de APIs RESTful, Docker, Celery, Redis e arquitetura desacoplada.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    <h3 class="timeline__year">2025 – Atual</h3>
+                    <p class="timeline__description">
+                        <strong>Mentor Backend – Lacrei Saúde</strong><br>
+                        Apoio técnico, boas práticas, arquitetura de APIs e testes automatizados.
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 
-<!-- EXPERIÊNCIA -->
-<section class="bg-light py-5">
-    <div class="container">
-        <h2 class="section-title">Experiência</h2>
+<section class="projects" id="projects">
+    <div class="projects__container reveal">
+        <h2 class="section-title">Meus Projetos</h2>
 
-        <p><strong>Mentor Backend – Lacrei Saúde</strong> (2025 - Atual)</p>
-        <ul>
-            <li>Mentoria técnica</li>
-            <li>Arquitetura de APIs</li>
-            <li>Boas práticas e testes</li>
-        </ul>
+        <div class="projects__grid">
 
-        <p><strong>Desenvolvedor Backend Júnior – Lacrei Saúde</strong> (2025)</p>
-        <ul>
-            <li>APIs RESTful</li>
-            <li>Docker e Celery</li>
-            <li>Code Review e testes</li>
-        </ul>
+            <a href="https://livesyncapp.com/" target="_blank" class="project-card">
+                <img src="images/livesync.png" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Live Sync</h3>
+                    <p class="project-card__description">
+                        Plataforma de sincronização de dados em tempo real com arquitetura escalável.
+                    </p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/daily_task" target="_blank" class="project-card">
+                <img src="images/daily_task.png" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Daily Task</h3>
+                    <p class="project-card__description">Gerenciador de tarefas diárias.</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/Medical_Appointment_Scheduling_API" target="_blank" class="project-card">
+                <img src="images/Medical_Appointment_Scheduling_API.png" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Medical Appointment Scheduling API</h3>
+                    <p class="project-card__description">
+                        API com Django e DRF para agendamento médico.
+                    </p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/delicada_e_feminina" target="_blank" class="project-card">
+                <img src="images/delicate_and_feminine.png" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Delicate and Feminine</h3>
+                    <p class="project-card__description">
+                        Loja virtual de cosméticos com Django e Bootstrap.
+                    </p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/web_shop" target="_blank" class="project-card">
+                <img src="images/web_shop.png" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Web Shop</h3>
+                    <p class="project-card__description">
+                        Supermercado online desenvolvido com Django.
+                    </p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/Sales_Hub" target="_blank" class="project-card">
+                <img src="images/sales_hub.png" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Sales Hub</h3>
+                    <p class="project-card__description">
+                        Sistema completo de gestão comercial.
+                    </p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/sge" target="_blank" class="project-card">
+                <img src="images/sge.jpg" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Sistema de Gestão de Estoque</h3>
+                    <p class="project-card__description">Sistema completo de estoque.</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/health_in_focus" target="_blank" class="project-card">
+                <img src="images/health_in_focus.jpg" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Health in Focus</h3>
+                    <p class="project-card__description">
+                        Sistema web acessível de saúde.
+                    </p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/flix_app" target="_blank" class="project-card">
+                <img src="images/flix_app.jpg" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Flix App</h3>
+                    <p class="project-card__description">Aplicação que consome API de filmes.</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/KaioHerculano/Carros-Projeto" target="_blank" class="project-card">
+                <img src="images/cars.jpg" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Cars</h3>
+                    <p class="project-card__description">
+                        CRUD completo de catálogo de carros.
+                    </p>
+                </div>
+            </a>
+
+            <a href="#" class="project-card">
+                <img src="images/chatbot.png" class="project-card__image">
+                <div class="project-card__overlay">
+                    <h3 class="project-card__title">Chatbot WhatsApp Automatizado</h3>
+                    <p class="project-card__description">
+                        Bot em Python para leitura automática de mensagens e integração futura com IA.
+                    </p>
+                </div>
+            </a>
+
+        </div>
     </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">© 2026 - Kaio Herculano</p>
+</main>
+
+<footer class="footer" id="contact">
+    <div class="footer__container reveal">
+        <h2 class="section-title">Contato</h2>
+        <p>Sinta-se à vontade para entrar em contato.</p>
+        <div class="footer__socials">
+            <a href="https://github.com/KaioHerculano" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/kaio-herculano-0063932ba/" target="_blank">LinkedIn</a>
+        </div>
+        <p>&copy; 2025 Kaio Herculano</p>
+    </div>
 </footer>
 
 </body>

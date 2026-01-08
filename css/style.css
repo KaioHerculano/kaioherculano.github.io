@@ -1,19 +1,493 @@
+:root {
+    --primary-color: #64b5f6; /* Um azul mais claro e moderno */
+    --primary-color-hover: #90caf9; /* Um azul ainda mais claro para o hover */
+    --background-color: #0d1117;
+    --surface-color: #161b22;
+    --border-color: #30363d;
+    --text-color: #c9d1d9;
+    --heading-color: #ffffff;
+    --font-primary: 'Inter', sans-serif;
+    --font-monospace: 'Roboto Mono', monospace;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 .section-title {
-    font-weight: bold;
-    margin-bottom: 30px;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
 }
 
-.project {
-    border-left: 4px solid #0d6efd;
-    padding-left: 15px;
-    margin-bottom: 25px;
-}
-
-.project a {
+/* --- 2. COMPONENTES REUTILIZÁVEIS --- */
+.button {
+    display: inline-block;
+    background-color: var(--primary-color); /* Azul */
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-color-hover); /* Azul mais claro */
+    transform: translateY(-3px);
+}
+
+/* --- 3. BARRA DE NAVEGAÇÃO --- */
+.navbar {
+    background-color: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.navbar__logo {
+    color: var(--primary-color); /* Azul */
+    font-family: var(--font-monospace);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar__link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+    color: var(--primary-color); /* Azul */
+}
+
+.navbar__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar__hamburger-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--heading-color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- 4. SEÇÃO HERO --- */
+.hero {
+    min-height: 90vh;
+    display: grid;
+    place-items: center;
+    padding: 4rem 1.5rem;
+}
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1100px;
+}
+
+.hero__image-wrapper {
+    flex-shrink: 0;
+}
+
+.hero__image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color); /* Azul */
+    object-fit: cover;
+}
+
+.hero__title {
+    font-family: var(--font-monospace);
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--primary-color); /* Azul */
+    margin-bottom: 1rem;
+    min-height: 100px;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+.hero__subtitle {
+    font-size: 1.1rem;
+    max-width: 50ch;
+    margin-bottom: 2rem;
+}
+
+/* --- 5. SEÇÃO SOBRE --- */
+.about {
+    padding: 5rem 1.5rem;
+    background-color: var(--surface-color);
+}
+
+.about__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about__content {
+    text-align: center;
+}
+
+.about__description {
+    margin-bottom: 2.5rem;
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+.about__skills-title {
+    color: var(--heading-color);
+    margin-bottom: 1.5rem;
+}
+
+.about__skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.about__skills-list li {
+    background-color: var(--background-color);
+    color: var(--primary-color); /* Azul */
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+/* --- 6. SEÇÃO JORNADA (TIMELINE) --- */
+.journey {
+    padding: 5rem 1.5rem;
+}
+
+.journey__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline__item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline__item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--background-color);
+    border: 4px solid var(--primary-color); /* Azul */
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline__item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline__item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline__item:nth-child(odd)::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 30px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--surface-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--surface-color);
+}
+
+.timeline__item:nth-child(even)::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 30px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--surface-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--surface-color) transparent transparent;
+}
+
+.timeline__item:nth-child(even)::after {
+    left: -10px;
+}
+
+.timeline__content {
+    padding: 20px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.timeline__year {
+    color: var(--primary-color); /* Azul */
+    font-family: var(--font-monospace);
+    margin-bottom: 0.5rem;
+}
+
+.timeline__description {
+    font-size: 0.95rem;
+}
+
+/* --- 7. SEÇÃO PROJETOS --- */
+.projects {
+    padding: 5rem 1.5rem;
+    background-color: var(--surface-color);
+}
+
+.projects__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    color: var(--heading-color);
+    background: var(--background-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.project-card__image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card__image {
+    transform: scale(1.05);
+}
+
+.project-card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, var(--background-color) 20%, transparent);
+}
+
+.project-card__title {
+    margin-bottom: 0.5rem;
+}
+
+.project-card__description {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* --- 8. RODAPÉ --- */
+.footer {
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.footer__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer__text {
+    margin-bottom: 2rem;
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer__social-link svg {
+    width: 32px;
+    height: 32px;
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__social-link:hover svg {
+    color: var(--primary-color); /* Azul */
+    transform: scale(1.1);
+}
+
+.footer__copyright {
+    font-size: 0.9rem;
+}
+
+/* --- 9. ANIMAÇÕES E KEYFRAMES --- */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 10. DESIGN RESPONSIVO --- */
+@media (max-width: 768px) {
+    .navbar__menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--background-color);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        gap: 0;
+        border-top: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+    }
+
+    .navbar__menu.active {
+        left: 0;
+    }
+
+    .navbar__item {
+        padding: 1rem 0;
+    }
+
+    .navbar__hamburger {
+        display: block;
+    }
+
+    .navbar__hamburger.active .navbar__hamburger-bar:nth-child(2) { opacity: 0; }
+    .navbar__hamburger.active .navbar__hamburger-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .navbar__hamburger.active .navbar__hamburger-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .hero__container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero__subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline__item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+
+    .timeline__item:nth-child(odd),
+    .timeline__item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline__item::after {
+        left: 10px;
+    }
+
+    .timeline__item:nth-child(even)::before,
+    .timeline__item:nth-child(odd)::before {
+        left: 40px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--surface-color) transparent transparent;
+    }
 }
