@@ -25,7 +25,7 @@ function initTypewriter() {
     const typewriterElement = document.querySelector(".typewriter");
     if (!typewriterElement) return;
     
-    const words = ["Kaio Herculano", "Desenvolvedor Python"];
+    const words = ["Kaio Herculano,", "Engenheiro de Software,", "Especialista Backend,"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;

@@ -2,9 +2,9 @@
     --primary-color: #64b5f6; /* Um azul mais claro e moderno */
     --primary-color-hover: #90caf9; /* Um azul ainda mais claro para o hover */
     --background-color: #0d1117;
-    --surface-color: #161b22;
+    --surface-color: #1f242c;
     --border-color: #30363d;
-    --text-color: #c9d1d9;
+    --text-color: #8b949e;
     --heading-color: #ffffff;
     --font-primary: 'Inter', sans-serif;
     --font-monospace: 'Roboto Mono', monospace;
@@ -48,13 +48,30 @@ img {
     padding: 12px 24px;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid transparent;
+    text-align: center;
 }
 
 .button:hover {
     background-color: var(--primary-color-hover); /* Azul mais claro */
     transform: translateY(-3px);
+}
+
+.button--outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.button--outline:hover {
+    background-color: rgba(100, 181, 246, 0.1);
+}
+
+.button--small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
 }
 
 /* --- 3. BARRA DE NAVEGAÇÃO --- */
@@ -146,16 +163,25 @@ img {
     object-fit: cover;
 }
 
-.hero__title {
+.hero__greeting {
+    display: block;
     font-family: var(--font-monospace);
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: var(--primary-color); /* Azul */
-    margin-bottom: 1rem;
-    min-height: 100px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
-.cursor {
-    animation: blink 1s step-end infinite;
+.hero__title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .hero__subtitle {
@@ -180,9 +206,10 @@ img {
 }
 
 .about__description {
-    margin-bottom: 2.5rem;
-    text-align: justify;
+    margin-bottom: 3rem;
+    text-align: center;
     font-size: 1.1rem;
+    color: var(--text-color);
 }
 
 .about__skills-title {
@@ -190,20 +217,31 @@ img {
     margin-bottom: 1.5rem;
 }
 
-.about__skills-list {
-    list-style: none;
+.tech-badges {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
 }
 
-.about__skills-list li {
-    background-color: var(--background-color);
-    color: var(--primary-color); /* Azul */
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
+.tech-badge {
+    background-color: rgba(100, 181, 246, 0.1);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(100, 181, 246, 0.3);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.tech-badge--small {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+}
+
+.about__resume-action {
+    margin-top: 2rem;
 }
 
 /* --- 6. SEÇÃO JORNADA (TIMELINE) --- */
@@ -246,19 +284,14 @@ img {
     height: 20px;
     right: -10px;
     background-color: var(--background-color);
-    border: 4px solid var(--primary-color); /* Azul */
+    border: 4px solid var(--primary-color);
     top: 25px;
     border-radius: 50%;
     z-index: 1;
 }
 
-.timeline__item:nth-child(odd) {
-    left: 0;
-}
-
-.timeline__item:nth-child(even) {
-    left: 50%;
-}
+.timeline__item:nth-child(odd) { left: 0; }
+.timeline__item:nth-child(even) { left: 50%; }
 
 .timeline__item:nth-child(odd)::before {
     content: " ";
@@ -286,9 +319,7 @@ img {
     border-color: transparent var(--surface-color) transparent transparent;
 }
 
-.timeline__item:nth-child(even)::after {
-    left: -10px;
-}
+.timeline__item:nth-child(even)::after { left: -10px; }
 
 .timeline__content {
     padding: 20px;
@@ -298,16 +329,56 @@ img {
 }
 
 .timeline__year {
-    color: var(--primary-color); /* Azul */
+    color: var(--primary-color);
     font-family: var(--font-monospace);
     margin-bottom: 0.5rem;
 }
 
 .timeline__description {
     font-size: 0.95rem;
+    color: var(--text-color);
 }
 
-/* --- 7. SEÇÃO PROJETOS --- */
+/* --- 7. SEÇÃO SERVIÇOS --- */
+.services {
+    padding: 5rem 1.5rem;
+}
+
+.services__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card__title {
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.service-card__description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* --- 8. SEÇÃO PROJETOS --- */
 .projects {
     padding: 5rem 1.5rem;
     background-color: var(--surface-color);
@@ -319,57 +390,71 @@ img {
 }
 
 .projects__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
 .project-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 375px;
     border-radius: 8px;
     overflow: hidden;
-    position: relative;
-    text-decoration: none;
-    color: var(--heading-color);
     background: var(--background-color);
+    border: 1px solid var(--border-color);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 .project-card__image {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
 
-.project-card:hover .project-card__image {
-    transform: scale(1.05);
-}
-
-.project-card__overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.project-card__content {
     padding: 1.5rem;
-    background: linear-gradient(to top, var(--background-color) 20%, transparent);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-card__title {
+    color: var(--heading-color);
     margin-bottom: 0.5rem;
 }
 
-.project-card__description {
-    color: var(--text-color);
-    font-size: 0.9rem;
+.project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-/* --- 8. RODAPÉ --- */
+.project-card__detail {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-card__detail strong {
+    color: var(--heading-color);
+}
+
+.project-card__actions {
+    margin-top: auto;
+    padding-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* --- 9. RODAPÉ --- */
 .footer {
     padding: 4rem 1.5rem;
     text-align: center;
@@ -386,30 +471,23 @@ img {
 
 .footer__socials {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 2rem;
-}
-
-.footer__social-link svg {
-    width: 32px;
-    height: 32px;
-    color: var(--text-color);
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer__social-link:hover svg {
-    color: var(--primary-color); /* Azul */
-    transform: scale(1.1);
 }
 
 .footer__copyright {
     font-size: 0.9rem;
 }
 
-/* --- 9. ANIMAÇÕES E KEYFRAMES --- */
+/* --- 10. ANIMAÇÕES E KEYFRAMES --- */
 @keyframes blink {
     50% { opacity: 0; }
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
 }
 
 .reveal {
@@ -423,7 +501,7 @@ img {
     transform: translateY(0);
 }
 
-/* --- 10. DESIGN RESPONSIVO --- */
+/* --- 11. DESIGN RESPONSIVO --- */
 @media (max-width: 768px) {
     .navbar__menu {
         position: fixed;
@@ -460,6 +538,11 @@ img {
         text-align: center;
     }
 
+    .hero__actions {
+        justify-content: center;
+        flex-direction: column;
+    }
+
     .hero__subtitle {
         margin-left: auto;
         margin-right: auto;
@@ -476,13 +559,9 @@ img {
     }
 
     .timeline__item:nth-child(odd),
-    .timeline__item:nth-child(even) {
-        left: 0;
-    }
+    .timeline__item:nth-child(even) { left: 0; }
 
-    .timeline__item::after {
-        left: 10px;
-    }
+    .timeline__item::after { left: 10px; }
 
     .timeline__item:nth-child(even)::before,
     .timeline__item:nth-child(odd)::before {
