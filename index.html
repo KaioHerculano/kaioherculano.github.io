@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Kaio Herculano, Desenvolvedor Python e Django.">
+    <meta name="description" content="Portfólio de Kaio Herculano, Desenvolvedor Backend especializado em Python, Django, Java e arquiteturas distribuídas.">
     <meta name="author" content="Kaio Herculano">
-    <title>Kaio Herculano | Desenvolvedor Python</title>
+    <title>Kaio Herculano | Desenvolvedor Backend</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
@@ -63,7 +64,7 @@
         <h2 class="section-title">Sobre Mim & Especialidade</h2>
         <div class="about__content">
             <p class="about__description">
-                Sou um Engenheiro de Software Back-End especializado no ecossistema Python. Com experiência prática como Desenvolvedor e Mentor na Lacrei Saúde, onde atuo também na liderança técnica de um time de 4 desenvolvedores, construindo arquiteturas desacopladas, APIs RESTful e integrações de alto desempenho. Meu foco é garantir que o "motor" do seu projeto funcione com excelência, segurança e escalabilidade.
+                Sou um Desenvolvedor Back-End especializado na construção de APIs de alta performance, integrações financeiras e arquiteturas distribuídas. Como Desenvolvedor e Mentor/Líder Técnico, liderei iniciativas que otimizaram o tempo de resposta de APIs críticas em 76%, modernizaram infraestruturas de CI/CD (reduzindo tempo de deploy em 76,6%) e reestruturaram sistemas legados para Clean Architecture (reduzindo o MTTR de bugs em 40%). Meu foco é garantir que o "motor" do seu projeto funcione com excelência, segurança e escalabilidade.
             </p>
 
             <div class="about__skills">
@@ -71,12 +72,16 @@
                 <div class="tech-badges">
                     <span class="tech-badge">Python</span>
                     <span class="tech-badge">Django & DRF</span>
+                    <span class="tech-badge">Java (Legado)</span>
                     <span class="tech-badge">APIs RESTful</span>
                     <span class="tech-badge">Docker</span>
                     <span class="tech-badge">PostgreSQL</span>
                     <span class="tech-badge">Celery & Redis</span>
+                    <span class="tech-badge">AWS</span>
+                    <span class="tech-badge">Clean Architecture</span>
+                    <span class="tech-badge">GitHub Actions (CI/CD)</span>
                     <span class="tech-badge">SQLAlchemy</span>
-                    <span class="tech-badge">Git & CI/CD</span>
+                    <span class="tech-badge">Git</span>
                 </div>
             </div>
             <div class="about__resume-action">
@@ -122,11 +127,20 @@
                 <div class="timeline__content">
                     <h3 class="timeline__year">2025 – Atual</h3>
                     <p class="timeline__description">
-                        <strong>Desenvolvedor Backend Júnior – Lacrei Saúde (Voluntário)</strong><br>
-                        Desenvolvimento de APIs RESTful, Docker, Celery, Redis e arquitetura desacoplada.
-                        <br><br>
                         <strong>Mentor e Líder Backend – Lacrei Saúde</strong><br>
-                        Liderança de uma equipe de 4 desenvolvedores, apoio técnico, code review, boas práticas e arquitetura de APIs.
+                        Liderança de time técnico de backend. Otimização de APIs críticas em 76% (Celery/Redis), modernização de deploy CI/CD para 1m45s (GitHub Actions), adoção de Clean Architecture e reestruturação do fluxo Pix com Split & Custódia (Conta Escrow Asaas) eliminando riscos de bitributação e reduzindo impostos.<br><br>
+                        <strong>Fundador & Desenvolvedor Backend – LiveSync</strong><br>
+                        Concepção e desenvolvimento de plataforma SaaS de streaming em Django/Celery. Automação de faturamento integrado ao Mercado Pago Pix com resiliência ACID (select_for_update) contra duplicidades.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    <h3 class="timeline__year">2026</h3>
+                    <p class="timeline__description">
+                        <strong>Consultoria Técnica & Projetos Freelance</strong><br>
+                        Adequação fiscal (SEFAZ-MT) de ERP desktop legado em Java, polling assíncrono multi-threaded (5s) para conciliação automática do Mercado Pago Pix e tratamento inteligente de exceções no PDV.
                     </p>
                 </div>
             </div>
@@ -139,19 +153,23 @@
         <h2 class="section-title">Como posso ajudar sua empresa?</h2>
         <div class="services__grid">
             <div class="service-card">
-                <h3 class="service-card__title">🚀 Desenvolvimento de APIs REST</h3>
+                <i class="bi bi-braces service-card__icon"></i>
+                <h3 class="service-card__title">Desenvolvimento de APIs REST</h3>
                 <p class="service-card__description">Criação de APIs robustas, seguras e documentadas para conectar seu front-end, aplicativos ou sistemas de terceiros utilizando Django REST Framework.</p>
             </div>
             <div class="service-card">
-                <h3 class="service-card__title">⚙️ Automação de Processos</h3>
+                <i class="bi bi-gear-wide-connected service-card__icon"></i>
+                <h3 class="service-card__title">Automação de Processos</h3>
                 <p class="service-card__description">Desenvolvimento de scripts e bots em Python para automatizar tarefas repetitivas, extrair dados e reduzir custos operacionais do seu negócio.</p>
             </div>
             <div class="service-card">
-                <h3 class="service-card__title">💻 Sistemas Web Completos</h3>
+                <i class="bi bi-window-fullscreen service-card__icon"></i>
+                <h3 class="service-card__title">Sistemas Web Completos</h3>
                 <p class="service-card__description">Arquitetura e criação de plataformas sob medida (ERPs, CRMs, Dashboards) focadas em alta performance e regra de negócio específica.</p>
             </div>
             <div class="service-card">
-                <h3 class="service-card__title">🔧 Sustentação e Melhoria</h3>
+                <i class="bi bi-wrench-adjustable service-card__icon"></i>
+                <h3 class="service-card__title">Sustentação e Melhoria</h3>
                 <p class="service-card__description">Refatoração de código legado, otimização de banco de dados (PostgreSQL) e implementação de testes automatizados para evitar falhas em produção.</p>
             </div>
         </div>
@@ -164,17 +182,58 @@
 
         <div class="projects__grid">
 
+            <!-- Site Oficial - Rojaum -->
+            <div class="project-card">
+                <img src="images/rojaum.png" class="project-card__image" alt="Site do Rojaum">
+                <div class="project-card__content">
+                    <h3 class="project-card__title">Site Oficial - Rojaum</h3>
+                    <div class="project-card__tags">
+                        <span class="tech-badge tech-badge--small">Django</span>
+                        <span class="tech-badge tech-badge--small">Python</span>
+                        <span class="tech-badge tech-badge--small">Docker</span>
+                        <span class="tech-badge tech-badge--small">PostgreSQL</span>
+                        <span class="tech-badge tech-badge--small">Integração APIs</span>
+                    </div>
+                    <p class="project-card__detail"><strong>Problema:</strong> Centralizar o conteúdo de um streamer de Minecraft, exibindo métricas dinâmicas de redes sociais e produtos de forma automatizada e estável.</p>
+                    <p class="project-card__detail"><strong>Solução:</strong> Plataforma web responsiva em Django integrada às APIs do YouTube e TikTok para atualização em tempo real de estatísticas, com painel administrativo e orquestração Docker Compose.</p>
+                    <div class="project-card__actions">
+                        <a href="https://rojaum.com/" target="_blank" class="button button--small">Ver Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integração de Pagamento via PIX (Java) -->
+            <div class="project-card">
+                <img src="images/java_pix.svg" class="project-card__image" alt="Integração de Pagamento via PIX">
+                <div class="project-card__content">
+                    <h3 class="project-card__title">Integração PIX & Adequação Fiscal</h3>
+                    <div class="project-card__tags">
+                        <span class="tech-badge tech-badge--small">Java</span>
+                        <span class="tech-badge tech-badge--small">PostgreSQL</span>
+                        <span class="tech-badge tech-badge--small">API REST</span>
+                        <span class="tech-badge tech-badge--small">WebmaniaBR</span>
+                    </div>
+                    <p class="project-card__detail"><strong>Problema:</strong> Adaptar um ERP legado desktop em Java às exigências de nota fiscal da SEFAZ-MT (Decreto nº 599/2023) sem interromper a operação de vendas locais ou dispor de IP público.</p>
+                    <p class="project-card__detail"><strong>Solução:</strong> Integração com API WebmaniaBR para injeção automática de tags fiscais e ID de rastro, além de polling assíncrono multi-threaded no Mercado Pago a cada 5s para confirmação instantânea de Pix.</p>
+                    <div class="project-card__actions">
+                        <span class="button button--small button--outline" style="cursor: default; opacity: 0.8;">Sistema Proprietário</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Sync -->
             <div class="project-card">
                 <img src="images/livesync.png" class="project-card__image" alt="Live Sync">
                 <div class="project-card__content">
                     <h3 class="project-card__title">Live Sync</h3>
                     <div class="project-card__tags">
                         <span class="tech-badge tech-badge--small">Django</span>
+                        <span class="tech-badge tech-badge--small">Celery</span>
                         <span class="tech-badge tech-badge--small">Redis</span>
-                        <span class="tech-badge tech-badge--small">WebSockets</span>
+                        <span class="tech-badge tech-badge--small">PostgreSQL</span>
                     </div>
-                    <p class="project-card__detail"><strong>Problema:</strong> Latência na comunicação e necessidade de atualização manual de dados.</p>
-                    <p class="project-card__detail"><strong>Solução:</strong> Plataforma de sincronização real-time com arquitetura escalável orientada a eventos.</p>
+                    <p class="project-card__detail"><strong>Problema:</strong> Duplicidade em faturamento de Pix concorrentes e inconsistência no controle de assinaturas em plataformas de streaming SaaS.</p>
+                    <p class="project-card__detail"><strong>Solução:</strong> Arquitetura orientada a eventos com filas assíncronas (Celery/Redis), proteção ACID contra chargebacks via travas concorrentes no banco e conformidade ao Art. 49 do CDC.</p>
                     <div class="project-card__actions">
                         <a href="https://livesyncapp.com/" target="_blank" class="button button--small">Ver Demo</a>
                     </div>

@@ -367,6 +367,13 @@ img {
     transform: translateY(-5px);
 }
 
+.service-card__icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    display: inline-block;
+}
+
 .service-card__title {
     color: var(--heading-color);
     margin-bottom: 0.5rem;
