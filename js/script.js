@@ -70,7 +70,7 @@ function initScrollReveal() {
             }
         });
     }, {
-        threshold: 0.1 // A animação começa quando 10% do elemento está visível
+        threshold: 0.02 // Começa assim que 2% do elemento entra na tela, garantindo o funcionamento em telas verticais de dispositivos móveis
     });
 
     revealElements.forEach(element => {

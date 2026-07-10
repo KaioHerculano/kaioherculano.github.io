@@ -871,6 +871,15 @@ a {
     .timeline__content {
         padding: 1.5rem;
     }
+
+    .projects {
+        padding: 4rem 1.5rem;
+    }
+
+    .projects__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
     
     .footer__container {
         padding: 3rem 1.5rem;
